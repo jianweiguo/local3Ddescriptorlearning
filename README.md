@@ -1,12 +1,13 @@
 # local3Ddescriptorlearning
 
-This code implements the method of deep learning local descriptors for 3D surface shapes described in 
-the following paper:
+This code implements the method of deep learning local descriptors for 3D surface shapes described in the following paper:
+
       --------------------------------------------------------------
       Hanyu Wang, Jianwei Guo, Dong-Ming Yan, Weize Quan, Xiaopeng Zhang. 
       Learning 3D Keypoint Descriptors for Non-Rigid Shape Matching. 
       ECCV 2018.
       --------------------------------------------------------------
+      
 Please consider citing the above paper if you use the code/program (or part of it). 
 
 # License
