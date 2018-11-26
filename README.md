@@ -20,9 +20,7 @@ the License, or (at your option) any later version.
 Should you have any questions, comments, or suggestions, please contact me at: 
 gjianwei.000@gmail.com
 
-Jianwei Guo
-
-http://jianweiguo.net/
+Jianwei Guo: http://jianweiguo.net/
 
 October, 2018
 
