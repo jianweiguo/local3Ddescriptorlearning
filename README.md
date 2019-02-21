@@ -16,6 +16,30 @@ This program is free software; you can redistribute it and/or modify it under th
 GNU General Public License as published by the Free Software Foundation; either version 2 of 
 the License, or (at your option) any later version. 
 
+# Simple Usage
+
+Build cpp solution:
+
+	Modify CMakeLists ：
+	add include_directories and link_directories for openmesh and matlab runtime
+	Cmake
+	
+	Build solution
+	Modify config.ini for mesh_dir (directory of OFF models) gi_dir (directory of geometry images) and kpi_dir (directory of key points, you can skip it for dense matching) and other paras.
+	
+	MCC matlab "mcc -W cpplib:libcompcur -T link:lib compute_curvature.m"
+	add libcompcur.dll to folder with GIGen.exe
+	run "GIGen.exe config.ini", it will generate geometry images
+	
+Python:
+	Train network:
+
+		classify_gi_by_pidx_and_split.py -> tfr_gen.py -> train_softmax256.py -> train_mincv_perloss.py
+		
+	Test to generate desc:
+	
+		descGen.py
+
 # Contact
 Should you have any questions, comments, or suggestions, please contact me at: 
 gjianwei.000@gmail.com
