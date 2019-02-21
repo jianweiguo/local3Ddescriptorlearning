@@ -18,7 +18,7 @@ the License, or (at your option) any later version.
 
 # Simple Usage
 
--Build cpp solution:
+-Build cpp solution: this code is to generate geometry images. You can run this step in your local desktop.
 
 	Modify CMakeLists ：
 	add include_directories and link_directories for openmesh and matlab runtime
@@ -31,7 +31,7 @@ the License, or (at your option) any later version.
 	add libcompcur.dll to folder with GIGen.exe
 	run "GIGen.exe config.ini", it will generate geometry images
 	
--Python:
+-Python: this code is to train and test network. You should copy the geometry images generated in last step into the server.
 	Train network:
 
 		classify_gi_by_pidx_and_split.py -> tfr_gen.py -> train_softmax256.py -> train_mincv_perloss.py
