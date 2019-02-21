@@ -32,6 +32,7 @@ the License, or (at your option) any later version.
 	run "GIGen.exe config.ini", it will generate geometry images
 	
 -Python: this code is to train and test network. You should copy the geometry images generated in last step into the server.
+
 	Train network:
 
 		classify_gi_by_pidx_and_split.py -> tfr_gen.py -> train_softmax256.py -> train_mincv_perloss.py
