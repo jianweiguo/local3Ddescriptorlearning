@@ -24,7 +24,7 @@ the License, or (at your option) any later version.
 	add include_directories and link_directories for openmesh and matlab runtime
 	Cmake
 	
-	Build solution
+	Build solution:
 	Modify config.ini for mesh_dir (directory of OFF models) gi_dir (directory of geometry images) and kpi_dir (directory of key points, you can skip it for dense matching) and other paras.
 	
 	MCC matlab "mcc -W cpplib:libcompcur -T link:lib compute_curvature.m"
