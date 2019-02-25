@@ -16,30 +16,45 @@ This program is free software; you can redistribute it and/or modify it under th
 GNU General Public License as published by the Free Software Foundation; either version 2 of 
 the License, or (at your option) any later version. 
 
-# Simple Usage
+# Usage
 
--Build cpp solution: this code is to generate geometry images. You can run this step in your local desktop.
+There are three folders here. The "cpp" calls the "matlab" for GI generation. The "python" is used for network training and testing.
+
+The usage is as follows:
+
+1.Compile matlab project：
+
+MCC matlab "mcc -W cpplib:libcompcur -T link:lib compute_curvature.m". We got the libcompcur.dll that will be added to the CPP project.
+
+2.Build cpp solution: this code is to generate geometry images. You can run this step in your local desktop.
 
 	Modify CMakeLists ：
-	add include_directories and link_directories for openmesh and matlab runtime
+		add include_directories and link_directories for openmesh and matlab runtime
 	Cmake
+	Build solution
+	Modify config.ini for mesh_dir(directory of OFF models) gi_dir(directory of geometry images) and kpi_dir(directory of key points, you can skip it for dense matching)
+		edit other paras such as gi_size(NxN of gi), hks_len, rotation_num and radius_list_p (the ratio of geodesic diameter).
+	Add "libcompcur.dll" to folder with GIGen.exe
+	Run "GIGen.exe config.ini" to generate GI
 	
-	Build solution:
-	Modify config.ini for mesh_dir (directory of OFF models) gi_dir (directory of geometry images) and kpi_dir (directory of key points, you can skip it for dense matching) and other paras.
-	
-	MCC matlab "mcc -W cpplib:libcompcur -T link:lib compute_curvature.m"
-	add libcompcur.dll to folder with GIGen.exe
-	run "GIGen.exe config.ini", it will generate geometry images
-	
--Python: this code is to train and test network. You should copy the geometry images generated in last step into the server.
+3.Python project: this code is to train and test network. You should copy the geometry images generated in last step into the server.
 
 	Train network:
 
-		classify_gi_by_pidx_and_split.py -> tfr_gen.py -> train_softmax256.py -> train_mincv_perloss.py
+		run "classify_gi_by_pidx_and_split.py" to classify dataset by point index for generating Tfrecord
+			source_dir is the folder of geometry images (rotation_num=12) for training, destination_dir is the generated folder after splitting
+		run "tfr_gen.py" to generate Tfrecord
+			gi_dir is the same as destination_dir, tfr_dir is the generated folder of Tfrecord.
+		run "train_softmax256.py" to pretrain a classification network
+			tfr_dir needs to be specified
+		run "train_mincv_perloss.py" to train the triplet network by restoring a pre-trained classification model
+			Tfr_dir needs to be specified
 		
--generate descriptor:
+	Test to generate descriptor:
 	
-		descGen.py
+		run "descGen.py" to generate descriptor using test dataset
+			gi_dir is the folder of geometry images (rotation_num=1) for testing, desc_dir is the generated folder of descriptor.
+			
 
 # Contact
 Should you have any questions, comments, or suggestions, please contact me at: 
