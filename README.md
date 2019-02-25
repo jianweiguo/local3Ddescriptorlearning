@@ -36,7 +36,6 @@ The usage is as follows:
 		Build solution
 		
 		Modify config.ini for mesh_dir(directory of OFF models) gi_dir(directory of geometry images) and kpi_dir(directory of key points, you can skip it for dense matching)
-		
 		edit other paras such as gi_size(NxN of gi), hks_len, rotation_num and radius_list_p (the ratio of geodesic diameter).
 		
 		Add "libcompcur.dll" to folder with GIGen.exe
