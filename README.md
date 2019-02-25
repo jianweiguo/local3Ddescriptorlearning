@@ -30,16 +30,11 @@ The usage is as follows:
 
 	Modify CMakeLists ：
 		add include_directories and link_directories for openmesh and matlab runtime
-	
 	Cmake
-	
 	Build solution
-	
 	Modify config.ini for mesh_dir(directory of OFF models) gi_dir(directory of geometry images) and kpi_dir(directory of key points, you can skip it for dense matching)
 		edit other paras such as gi_size(NxN of gi), hks_len, rotation_num and radius_list_p (the ratio of geodesic diameter).
-	
 	Add "libcompcur.dll" to folder with GIGen.exe
-	
 	Run "GIGen.exe config.ini" to generate GI
 	
 3. Python project: this code is to train and test network. You should copy the geometry images generated in last step into the server.
