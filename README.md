@@ -8,7 +8,8 @@ This code implements the method of deep learning local descriptors for 3D surfac
       ECCV 2018.
       --------------------------------------------------------------
       
-An advanced method is implemented in [LPS](https://github.com/yiqun-wang/LPS)
+An advanced method is implemented in [LPS](https://github.com/yiqun-wang/LPS).
+
 Please consider citing the above paper if you use the code/program (or part of it). 
 
 # License
